@@ -11,15 +11,17 @@ window.addEventListener('load', () => {
         let minutes = currentDate.getMinutes() ;
         let seconds = currentDate.getSeconds();
         
+
+        // I have added "0" if the Hours/minutes/Seconds smaller than 10
+        hours=hours<10 ? "0" + hours : hours
         showHour.innerText = hours 
         minutes=minutes<10 ? "0" + minutes : minutes
         showMinute.innerText = minutes
         seconds=seconds<10 ? "0" + seconds : seconds
         showSecond.innerText = seconds
-        if (Number(hours) >= 12) {
-            ampm.innerText ="PM"
-        }else{
-            ampm.innerText ="AM" 
-        }
+        
+
+        //We will add AM or PM according to the hour
+        ampm.innerText= hours>=12 ? "PM" : "AM"
     }, 1000)
   });
