@@ -12,8 +12,10 @@ window.addEventListener('load', () => {
         let seconds = currentDate.getSeconds();
         
         showHour.innerText = hours 
+        minutes=minutes<10 ? "0" + minutes : minutes
         showMinute.innerText = minutes
-        showSecond.innerText = Number(seconds)
+        seconds=seconds<10 ? "0" + seconds : seconds
+        showSecond.innerText = seconds
         if (Number(hours) >= 12) {
             ampm.innerText ="PM"
         }else{
